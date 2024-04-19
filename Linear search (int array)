@@ -1,58 +1,43 @@
-
+class Hello{
 	public static void main(String[] args) {
 	int[] num={44,34,64,1,19,6,4,9};
 
 	int ans=linearsearch(num, 19);
 	System.out.println(ans);
-
-
-	
 	}
 	// return index
-	static int linearsearch(int[] arr, int Target)
-	{
+	static int linearsearch(int[] arr, int Target) {
 		if (arr.length ==0){
 			return -1;
 		}
 		for (int index=0;index<arr.length;index++){
-			if(Target==arr[index])
-			{
+			if(Target==arr[index]) {
 				return index;
 			}
 		}
 		return -1;
-		
 	}
 	//return element
-	static int linearsearch1(int[] arr, int Target)
-	{
+	static int linearsearch1(int[] arr, int Target) {
 		if (arr.length ==0){
 			return Integer.MAX_VALUE;
 		}
-		for(int element : arr)
-		{
+		for(int element : arr){
 			if(element==Target)
 				return element;
 		}
-		
-		return Integer.MAX_VALUE;
-		
+		return Integer.MAX_VALUE;	
 	}
-
 	// return true or false
-	static boolean linearsearch2(int[] arr, int Target)
-	{
+	static boolean linearsearch2(int[] arr, int Target){
 		if (arr.length ==0){
 			return false;
 		}
 		for (int index=0;index<arr.length;index++){
-			if(Target==arr[index])
-			{
+			if(Target==arr[index]){
 				return true;
 			}
 		}
 		return false;
-		
 	}
-
 }
