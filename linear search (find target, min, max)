@@ -1,0 +1,63 @@
+import java.util.Arrays;
+
+class Hello
+{
+	public static void main(String[] args) {
+	int[][] num={
+		{35,86,93},
+		{73,92,25,56,62},
+		{67,87,}
+	};
+	int[] result=search(num,92);
+	System.out.println(Arrays.toString(result));
+	System.out.println(max(num));
+	System.out.println(min(num));
+	}
+
+	// search value in 2d array
+	static int[] search(int[][] arr, int Target)
+	{
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				if(arr[i][j]== Target)
+					return new int[] {i,j};
+
+			}
+		}
+		return new int[] {-1,-1};
+	
+	}
+	// find max
+	static int max(int[][] arr)
+	{
+		int ans =Integer.MIN_VALUE;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				if(ans<arr[i][j])
+					ans=arr[i][j];
+
+			}
+		}
+		return ans;
+	
+	}
+	// find min
+	static int min(int[][] arr)
+	{
+		int ans =Integer.MAX_VALUE;
+		for(int[] i:arr)
+		{
+			for(int j:i)
+			{
+				if(ans>j)
+					ans=j;
+			}
+		}
+		return ans;
+	
+	}
+}
