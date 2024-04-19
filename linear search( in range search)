@@ -1,27 +1,21 @@
-class Hello
-{
+
+class Hello{
 	public static void main(String[] args) {
 	int[] num={44,34,64,1,19,6,4,9};
 
 	int ans=linearsearch(num, 19,1,5);
 	System.out.println(ans);
-
-
-	
 	}
 	// return index
-	static int linearsearch(int[] arr, int Target,int start,int end)
-	{
+	static int linearsearch(int[] arr, int Target,int start,int end){
 		if (arr.length ==0){
 			return -1;
 		}
 		for (int index=start;index<=end;index++){
-			if(Target==arr[index])
-			{
+			if(Target==arr[index]){
 				return index;
 			}
 		}
 		return -1;
-		
 	}
 }
