@@ -1,0 +1,22 @@
+class Binarysearch{
+	public static void main(String[] args) {
+		int[] num={-8,-5,-1,1,3,4,7,9,23,54,76,99};
+			System.out.println(ceiling(num, 6));
+	}
+	//return index >=target
+	static int ceiling(int[] arr,int target){
+		int start=0,end=arr.length-1;
+        if(target>arr.length -1)
+            return -1;
+		while(start<=end){
+			int mid=start+(end - start)/2;
+			if(arr[mid]<target)
+				start=mid+1;
+			else if(arr[mid]>target)
+				end=mid-1;
+			else
+				return mid;
+		}
+		return start;
+	}
+}
