@@ -1,0 +1,48 @@
+import java.util.Arrays;
+public class Hello
+{
+    public static void main(String[] args) {
+        int[][] nums = {{1,2,3},
+                        {4,5,6},
+                        {7,8,9},
+                        {10,11,12}};
+        int target=8;
+        int row=(searchRow(nums, target));
+        int[] ans=BS(nums, row,target);
+        System.out.println(Arrays.toString(ans));
+    }
+    //search the target index 
+    static int[] BS(int[][] mat,int row,int target)
+    {
+        int cStart=0;
+        int cEnd=mat[row].length-1;
+        while (cStart<=cEnd)
+        {
+            int mid=cStart+(cEnd-cStart)/2;
+            if(mat[row][mid]==target)
+                return new int[]{row,mid};
+            else if(mat[row][mid]<target)
+                cStart=mid+1;
+            else    
+                cEnd=mid-1;
+        }
+        return new int[]{-1,-1};
+    }
+    // search the row of target exist 
+    static int searchRow(int[][] mat,int target)
+    {
+        int rStart=0;
+        int rEnd=mat.length-1;
+       while(rStart<rEnd)
+       {
+            int mid=rStart+(rEnd-rStart)/2;
+            if(mat[mid][0]==target || rEnd!=0 && mat[mid][0]< target && target <mat[mid+1][0])
+                return mid;
+            else if(rEnd !=0 && mat[mid][0]<target && target>mat[mid+1][0] || target==mat[mid+1][0])
+                rStart=mid+1;
+            else
+                rEnd =mid;
+       }
+       return rEnd; 
+    }
+}
