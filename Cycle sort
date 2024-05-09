@@ -1,0 +1,27 @@
+import java.util.Arrays;
+public class Hello
+{
+    public static void main(String[] args) 
+    {
+        int[] arr = {5,3,4,1,2};
+        cycleSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void cycleSort(int[] arr)
+    {
+        int i=0;
+        while(i<arr.length)
+        {
+            if(arr[i] != arr[arr[i]-1] )
+                swap(arr, i,arr[i]-1);
+            else
+                i++;
+        }
+    }
+    static void swap(int[] arr,int first,int second)
+    {
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+}  
