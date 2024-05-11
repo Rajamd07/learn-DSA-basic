@@ -13,6 +13,7 @@ public class Hello
         {
             int last=arr.length-1-i;
             int maxIndex=getMaxTndex(arr,0,last);
+            if(maxIndex != last)
             swap(arr, maxIndex, last);
         }
     }
